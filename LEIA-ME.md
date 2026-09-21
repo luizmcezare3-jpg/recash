@@ -20,7 +20,7 @@
 | `SEU_INSTAGRAM` | usuário do Instagram da ReCash |
 | `Ribeirão Preto / SP` (seção Endereço) | endereço completo da empresa |
 
-Também confirme: o prazo (20 dias), os 40% de honorários e a assinatura "Estúdio Pink Design" do rodapé (vieram das suas imagens de referência).
+Também confirme: o prazo médio (20 dias) e a assinatura "Estúdio Pink Design" do rodapé (vieram das suas imagens de referência).
 
 ## Foto no topo (opcional)
 No CSS, dentro de `#recash{...}`, troque `--rc-hero-img:none;` por `--rc-hero-img:url(https://seusite.com/foto.jpg);`
@@ -34,3 +34,8 @@ No CSS, dentro de `#recash{...}`, troque `--rc-hero-img:none;` por `--rc-hero-im
 
 ## Para editar o código-fonte
 Edite os arquivos em `src/` e rode `node build.js` para gerar `dist/` de novo (o script também roda verificações).
+
+## Logo e cores
+- A logo enviada está em `assets/logo-recash-original.png` (original) e, recortada, em `assets/logo-recash.png` e `assets/logo-recash-icone.png`. Ela vai embutida no próprio bloco (base64), então não precisa subir imagem no WordPress.
+- Para trocar a logo: substitua os PNGs em `assets/`, rode `node make-assets.js` e depois `node build.js`.
+- Paleta baseada em rosath4.github.io/paginarecash: roxo #7c42d0 / #5d30a2, verde #3deb56 / #24b43a, lavanda #f5ecff, fundo #f5f5f8, texto #1a1229. As cores ficam nas variáveis do início de `src/recash.css`.

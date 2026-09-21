@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 const read = (f) => fs.readFileSync(path.join(__dirname, 'src', f), 'utf8');
-const css = read('recash.css');
+const css = [read('recash.css'), read('assets.css')].join('\n');
 const html = read('recash.html');
 const js = read('recash.js');
 
