@@ -22,8 +22,9 @@
 
 Também confirme: o prazo médio (20 dias) e a assinatura "Estúdio Pink Design" do rodapé (vieram das suas imagens de referência).
 
-## Foto no topo (opcional)
-No CSS, dentro de `#recash{...}`, troque `--rc-hero-img:none;` por `--rc-hero-img:url(https://seusite.com/foto.jpg);`
+## Foto do topo
+O fundo do topo é a foto do escritório (monitor e notebook com a logo), escurecida por uma camada roxa/preta. Ela está em `assets/hero-fundo.jpg` (original em `assets/hero-original.jpeg`) e vai embutida no bloco.
+Para trocar: substitua `assets/hero-fundo.jpg`, rode `node make-assets.js` e depois `node build.js`. Para clarear ou escurecer, ajuste os valores `rgba(...)` da regra `.rc-hero::after` em `src/recash.css`.
 
 ## Por que não dá problema no WordPress
 - Todo o CSS é prefixado com `#recash`, então o tema não altera o visual (e o site não altera o tema).
