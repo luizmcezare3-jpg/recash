@@ -1,0 +1,689 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+html{scroll-behavior:smooth}
+body{overflow-x:clip}
+#recash{--rc-ink:#1a0f45;--rc-muted:#5d5880;--rc-navy:#12082f;--rc-purple:#5b1fc0;--rc-purple-d:#3f1590;--rc-violet:#efe8ff;--rc-lav:#f6f2ff;--rc-lav-2:#eee7fc;--rc-green:#2fd04b;--rc-green-d:#1ea83a;--rc-line:#e4dcf6;--rc-shadow:0 12px 32px rgba(52,22,120,.10);--rc-hero-img:none;display:block;position:relative;left:50%;width:100vw;margin:0 0 0 -50vw;padding:0;font-family:'Outfit','Segoe UI',system-ui,-apple-system,Arial,sans-serif;font-size:16px;line-height:1.55;color:var(--rc-ink);text-align:left;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+#recash *,#recash *::before,#recash *::after{box-sizing:border-box}
+#recash h1,#recash h2,#recash h3,#recash h4,#recash p,#recash ul,#recash ol,#recash li,#recash figure,#recash small,#recash b{margin:0;padding:0;border:0;background:none;font-family:inherit;font-size:inherit;line-height:inherit;text-transform:none;letter-spacing:normal;color:inherit}
+#recash h1,#recash h2,#recash h3,#recash h4{font-weight:600;line-height:1.15;text-align:inherit}
+#recash ul,#recash ol,#recash li{list-style:none}
+#recash li::marker{content:''}
+#recash a{color:inherit;text-decoration:none;background:none;border:0;box-shadow:none;outline-offset:3px}
+#recash a:hover,#recash a:focus{color:inherit;text-decoration:none}
+#recash a:focus-visible,#recash summary:focus-visible,#recash .rc-toggle:focus-visible ~ .rc-header__in .rc-burger{outline:3px solid #8b5cf6}
+#recash svg{display:block;max-width:none}
+#recash .rc-ico{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#recash .rc-ico--fill{fill:currentColor}
+#recash .rc-ico--solid{fill:currentColor;stroke:none}
+#recash .rc-sprite{position:absolute;width:0;height:0;overflow:hidden}
+#recash .rc-wrap{width:100%;max-width:1300px;margin:0 auto;padding:0 30px}
+#recash .rc-sec{padding:84px 0;scroll-margin-top:86px}
+#recash .rc-sec--lav{background:var(--rc-lav)}
+#recash .rc-sec--lav2{background:var(--rc-lav-2)}
+#recash .rc-eyebrow{display:block;font-size:.8rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--rc-purple);margin-bottom:10px}
+#recash .rc-h2{font-size:clamp(1.7rem,3vw,2.3rem);font-weight:700;color:var(--rc-ink);letter-spacing:-.01em}
+#recash .rc-head{max-width:820px;margin:0 auto 48px;text-align:center}
+#recash .rc-head p{margin-top:14px;color:var(--rc-muted);font-size:1.05rem}
+#recash .rc-head--bar .rc-h2::after{content:'';display:block;width:48px;height:3px;border-radius:2px;background:var(--rc-green);margin:16px auto 0}
+#recash .rc-tick{display:inline-block;position:relative;flex:none;width:20px;height:20px;border-radius:50%;background:var(--rc-green)}
+#recash .rc-tick::after{content:'';position:absolute;left:calc(50% - 2.5px);top:calc(50% - 5.5px);width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+#recash .rc-circle{display:grid;place-items:center;flex:none;border-radius:50%;background:var(--rc-violet);color:var(--rc-purple)}
+#recash .rc-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 30px;border-radius:12px;font-size:1.04rem;font-weight:600;line-height:1;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease}
+#recash .rc-btn:hover{transform:translateY(-2px)}
+#recash .rc-btn--wa{background:linear-gradient(180deg,#35da50 0%,#1fa83a 100%);color:#fff;box-shadow:0 10px 24px rgba(47,208,75,.32)}
+#recash .rc-btn--wa:hover,#recash .rc-btn--wa:focus{color:#fff;box-shadow:0 14px 30px rgba(47,208,75,.45)}
+#recash .rc-btn--ghost{border:1.5px solid rgba(255,255,255,.85);color:#fff;background:transparent}
+#recash .rc-btn--ghost:hover,#recash .rc-btn--ghost:focus{background:#fff;color:var(--rc-purple-d)}
+#recash .rc-btn--xl{width:100%;max-width:710px;justify-content:space-between;padding:24px 44px;border-radius:999px;font-size:1.4rem}
+#recash .rc-btn .rc-ico{width:26px;height:26px}
+#recash .rc-btn--xl .rc-ico:first-child{width:36px;height:36px}
+#recash .rc-header{position:sticky;top:0;z-index:60;background:linear-gradient(90deg,#150a3b 0%,#2a1373 50%,#150a3b 100%);color:#fff;border-bottom:1px solid rgba(255,255,255,.06)}
+#recash .rc-toggle{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
+#recash .rc-header__in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:28px;min-height:88px}
+#recash .rc-nav{display:flex;align-items:center;gap:52px;font-size:1.15rem;font-weight:500}
+#recash .rc-nav--r{justify-content:flex-end}
+#recash .rc-nav a,#recash .rc-menu a{position:relative;display:inline-block;padding:8px 0;color:#fff;transition:color .2s}
+#recash .rc-nav a:hover,#recash .rc-nav a:focus,#recash .rc-menu a:hover,#recash .rc-menu a:focus{color:var(--rc-green)}
+#recash .rc-nav a.is-active,#recash .rc-menu a.is-active{color:var(--rc-green)}
+#recash .rc-nav a.is-active::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:var(--rc-green)}
+#recash .rc-logo{display:inline-flex;align-items:center;gap:6px;color:#fff}
+#recash .rc-logo .rc-mark{width:38px;height:42px;fill:none;stroke:none}
+#recash .rc-logo__txt{display:flex;flex-direction:column;line-height:1}
+#recash .rc-logo__txt b{font-size:2.15rem;font-weight:700;letter-spacing:-.015em;color:#fff}
+#recash .rc-logo__txt small{margin-top:3px;font-size:.5rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--rc-green)}
+#recash .rc-burger{display:none;justify-self:end;width:48px;height:48px;border-radius:12px;border:1px solid rgba(255,255,255,.25);cursor:pointer;place-items:center;align-content:center;gap:5px}
+#recash .rc-burger span{display:block;width:22px;height:2px;border-radius:2px;background:#fff;transition:transform .2s,opacity .2s}
+#recash .rc-menu{display:none}
+#recash .rc-toggle:checked ~ .rc-header__in .rc-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#recash .rc-toggle:checked ~ .rc-header__in .rc-burger span:nth-child(2){opacity:0}
+#recash .rc-toggle:checked ~ .rc-header__in .rc-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#recash .rc-hero{position:relative;overflow:hidden;color:#fff;padding:64px 0 70px;scroll-margin-top:86px;background:radial-gradient(900px 420px at 12% 15%,rgba(99,45,210,.38),transparent 62%),radial-gradient(700px 520px at 92% 85%,rgba(47,208,75,.10),transparent 60%),linear-gradient(135deg,#0d0524 0%,#1a0a4a 55%,#0f0630 100%)}
+#recash .rc-hero::before{content:'';position:absolute;inset:0;background:var(--rc-hero-img) center/cover no-repeat;opacity:.35;pointer-events:none}
+#recash .rc-hero__grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,545px);gap:64px;align-items:center}
+#recash .rc-hero h1{font-size:clamp(2.1rem,3.5vw,3.1rem);font-weight:600;letter-spacing:-.02em;line-height:1.1;color:#fff}
+#recash .rc-hero h1 span{display:block;color:#3ddc57}
+#recash .rc-hero h1::after{content:'';display:block;width:62px;height:2px;margin-top:24px;background:#6d3fe0}
+#recash .rc-hero__note{display:flex;align-items:center;gap:18px;margin:26px 0 32px;max-width:460px}
+#recash .rc-boxicon{display:grid;place-items:center;flex:none;width:52px;height:52px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);color:#3ddc57}
+#recash .rc-hero__note p{color:#e6e1f7;font-size:1rem;line-height:1.5}
+#recash .rc-btns{display:flex;flex-wrap:wrap;gap:16px}
+#recash .rc-checks{display:flex;flex-wrap:wrap;gap:14px 34px;margin-top:32px;font-size:.95rem;color:#ece8fb}
+#recash .rc-checks li{display:flex;align-items:center;gap:10px}
+#recash .rc-stats-wrap{position:relative;padding-top:15px}
+#recash .rc-stats-wrap::before{content:'';position:absolute;left:0;right:0;top:0;height:70px;border-radius:18px 18px 0 0;background:#5b1fc0}
+#recash .rc-stats{position:relative;background:#fff;color:var(--rc-ink);border-radius:18px;padding:38px 34px 28px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+#recash .rc-stats__title{text-align:center;font-size:.9rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--rc-purple-d)}
+#recash .rc-stats__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;text-align:center}
+#recash .rc-stat .rc-circle{width:78px;height:78px;margin:0 auto 14px}
+#recash .rc-stat .rc-ico{width:34px;height:34px}
+#recash .rc-stat strong{display:block;font-size:2rem;font-weight:700;line-height:1.1;color:#4d17b0}
+#recash .rc-stat > span:not(.rc-circle){display:block;margin-top:6px;font-size:.95rem;color:var(--rc-muted)}
+#recash .rc-stat::after{content:'';display:block;width:30px;height:2px;margin:18px auto 0;background:var(--rc-green)}
+#recash .rc-stats__note{display:flex;align-items:center;gap:12px;margin-top:22px;padding-top:22px;border-top:1px solid var(--rc-line);font-size:.92rem;color:var(--rc-muted)}
+#recash .rc-stats__note .rc-ico{width:22px;height:22px;color:var(--rc-green-d)}
+#recash .rc-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+#recash .rc-card{position:relative;display:flex;flex-direction:column;background:#fff;border-radius:18px;padding:24px 24px 22px;box-shadow:var(--rc-shadow);transition:transform .2s ease,box-shadow .2s ease}
+#recash .rc-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(52,22,120,.16)}
+#recash .rc-tile{display:grid;place-items:center;flex:none;width:64px;height:64px;border-radius:16px;background:linear-gradient(145deg,#7c3aed,#4c1d95);color:#fff;box-shadow:0 8px 18px rgba(91,31,192,.28)}
+#recash .rc-tile .rc-ico{width:30px;height:30px}
+#recash .rc-card h3{margin-top:22px;font-size:1.2rem;font-weight:600;color:var(--rc-ink)}
+#recash .rc-card h3::after{content:'';display:block;width:24px;height:2px;margin-top:10px;background:var(--rc-green)}
+#recash .rc-card p{margin-top:14px;font-size:.93rem;color:var(--rc-muted);flex:1}
+#recash .rc-card__go{align-self:flex-end;display:grid;place-items:center;width:32px;height:32px;margin-top:14px;border-radius:50%;border:1.5px solid #b9a1f0;color:var(--rc-purple);transition:background .2s,color .2s}
+#recash .rc-card__go .rc-ico{width:16px;height:16px}
+#recash .rc-card__go:hover,#recash .rc-card__go:focus{background:var(--rc-purple);color:#fff}
+#recash .rc-about{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:54px;align-items:start}
+#recash .rc-about .rc-h2{margin-bottom:22px}
+#recash .rc-prose p{margin-bottom:16px;color:var(--rc-muted);font-size:1.03rem}
+#recash .rc-prose p strong{color:var(--rc-ink);font-weight:600}
+#recash .rc-callout{margin-top:24px;padding:20px 24px;border-radius:14px;border-left:4px solid var(--rc-green);background:var(--rc-violet);color:var(--rc-ink);font-size:1rem}
+#recash .rc-panel{background:#fff;border-radius:20px;padding:34px;box-shadow:var(--rc-shadow)}
+#recash .rc-panel h3{font-size:1.35rem;font-weight:700;color:var(--rc-ink)}
+#recash .rc-panel > p{margin-top:12px;color:var(--rc-muted)}
+#recash .rc-xlist{margin-top:20px;display:grid;gap:12px}
+#recash .rc-xlist li{display:flex;align-items:center;gap:12px;font-weight:500;color:var(--rc-ink)}
+#recash .rc-xlist .rc-ico{width:22px;height:22px;color:#a78bda}
+#recash .rc-panel__foot{margin-top:22px;padding-top:20px;border-top:1px solid var(--rc-line);color:var(--rc-muted);font-size:.95rem}
+#recash .rc-pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:56px}
+#recash .rc-pillar{position:relative;background:#fff;border-radius:18px;padding:26px 24px;box-shadow:var(--rc-shadow)}
+#recash .rc-pillar__n{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:linear-gradient(145deg,#7c3aed,#4c1d95);color:#fff;font-weight:700}
+#recash .rc-pillar h3{margin-top:16px;font-size:1.1rem;font-weight:600}
+#recash .rc-pillar p{margin-top:8px;font-size:.92rem;color:var(--rc-muted)}
+#recash .rc-pillars-title{margin-top:64px;text-align:center}
+#recash .rc-who{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+#recash .rc-who__card{background:#fff;border-radius:20px;padding:36px 30px;text-align:center;box-shadow:var(--rc-shadow)}
+#recash .rc-who__card .rc-circle{width:88px;height:88px;margin:0 auto 22px}
+#recash .rc-who__card .rc-ico{width:40px;height:40px}
+#recash .rc-who__card h3{font-size:1.3rem;font-weight:600}
+#recash .rc-who__card p{margin-top:12px;color:var(--rc-muted);font-size:.97rem}
+#recash .rc-who__more{margin-top:28px;text-align:center;color:var(--rc-muted)}
+#recash .rc-steps{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+#recash .rc-steps::before{content:'';position:absolute;top:18px;left:10%;right:10%;border-top:2px dashed #b9a5ee}
+#recash .rc-step{position:relative;text-align:center;padding:0 6px}
+#recash .rc-step__n{position:relative;display:grid;place-items:center;width:36px;height:36px;margin:0 auto 14px;border-radius:50%;background:var(--rc-purple-d);color:#fff;font-weight:700;font-size:.95rem}
+#recash .rc-step__ic{display:grid;place-items:center;width:70px;height:70px;margin:0 auto 16px;border-radius:18px;background:#fff;color:var(--rc-purple);box-shadow:var(--rc-shadow)}
+#recash .rc-step__ic .rc-ico{width:34px;height:34px}
+#recash .rc-step h3{font-size:1.02rem;font-weight:600}
+#recash .rc-step p{margin-top:8px;font-size:.87rem;color:var(--rc-muted)}
+#recash .rc-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:50px;background:#fff;border-radius:20px;box-shadow:var(--rc-shadow);padding:22px 10px}
+#recash .rc-strip__item{display:flex;align-items:center;gap:16px;padding:6px 26px}
+#recash .rc-strip__item + .rc-strip__item{border-left:1px solid var(--rc-line)}
+#recash .rc-strip__item .rc-circle{width:54px;height:54px}
+#recash .rc-strip__item .rc-ico{width:26px;height:26px}
+#recash .rc-strip__item b{font-size:.95rem;font-weight:600;line-height:1.3;color:var(--rc-ink)}
+#recash .rc-sub{margin:76px 0 34px;text-align:center}
+#recash .rc-sub .rc-h2{font-size:clamp(1.5rem,2.6vw,1.95rem)}
+#recash .rc-etapas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+#recash .rc-etapa{display:flex;gap:18px;padding:26px;border-radius:18px;background:#fff;box-shadow:var(--rc-shadow)}
+#recash .rc-etapa__n{display:grid;place-items:center;flex:none;width:46px;height:46px;border-radius:50%;background:linear-gradient(145deg,#7c3aed,#4c1d95);color:#fff;font-size:1.15rem;font-weight:700}
+#recash .rc-etapa h4{font-size:1.1rem;font-weight:600;color:var(--rc-ink)}
+#recash .rc-etapa p{margin-top:8px;font-size:.94rem;color:var(--rc-muted)}
+#recash .rc-etapa p strong{color:var(--rc-ink);font-weight:600}
+#recash .rc-etapa--hl{flex-direction:column;justify-content:center;background:linear-gradient(135deg,#3a1590 0%,#5b1fc0 100%);color:#fff}
+#recash .rc-etapa--hl h4{color:#fff;font-size:1.25rem}
+#recash .rc-etapa--hl p{color:#e6defc}
+#recash .rc-etapa--hl p.rc-rule{margin-top:16px;font-size:1.25rem;font-weight:600;color:#fff}
+#recash .rc-etapa--hl p.rc-rule em{font-style:normal;color:#5fe47a}
+#recash .rc-diffs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+#recash .rc-diff{display:flex;align-items:center;gap:14px;padding:18px 22px;border-radius:14px;background:#fff;box-shadow:var(--rc-shadow);font-weight:500;color:var(--rc-ink)}
+#recash .rc-legal{max-width:920px;margin:36px auto 0;padding:20px 26px;border-radius:14px;border:1px solid #cdbdf2;background:#fff;color:var(--rc-muted);font-size:.95rem;text-align:center}
+#recash .rc-legal strong{color:var(--rc-ink)}
+#recash .rc-faq{max-width:940px;margin:0 auto;display:grid;gap:14px}
+#recash .rc-faq details{background:#fff;border-radius:14px;box-shadow:var(--rc-shadow);overflow:hidden}
+#recash .rc-faq summary{display:flex;align-items:center;gap:22px;padding:14px 26px 14px 20px;min-height:82px;cursor:pointer;list-style:none;font-size:1.08rem;font-weight:600;color:var(--rc-ink)}
+#recash .rc-faq summary::-webkit-details-marker{display:none}
+#recash .rc-faq summary::marker{content:''}
+#recash .rc-faq__ic{position:relative;display:grid;place-items:center;flex:none;width:52px;height:52px;border-radius:50%;background:var(--rc-violet);color:var(--rc-purple)}
+#recash .rc-faq__ic .rc-ico{width:26px;height:26px}
+#recash .rc-faq__ic i{position:absolute;right:-2px;bottom:-2px;width:18px;height:18px;border-radius:50%;background:var(--rc-green);border:2px solid #fff}
+#recash .rc-faq__ic i::after{content:'';position:absolute;left:4px;top:1px;width:4px;height:7px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+#recash .rc-faq__q{flex:1}
+#recash .rc-plus{position:relative;flex:none;width:18px;height:18px}
+#recash .rc-plus::before,#recash .rc-plus::after{content:'';position:absolute;background:var(--rc-purple);border-radius:2px;transition:transform .25s ease,opacity .25s ease}
+#recash .rc-plus::before{left:0;right:0;top:calc(50% - 1.5px);height:3px}
+#recash .rc-plus::after{top:0;bottom:0;left:calc(50% - 1.5px);width:3px}
+#recash .rc-faq details[open] .rc-plus::after{transform:scaleY(0);opacity:0}
+#recash .rc-faq__a{padding:0 30px 24px 94px;color:var(--rc-muted);font-size:1rem}
+#recash .rc-banner{display:flex;align-items:center;gap:34px;margin-top:64px;padding:38px 60px;border-radius:26px;color:#fff;background:linear-gradient(90deg,#3a1490 0%,#5522bd 100%);box-shadow:0 24px 50px rgba(58,20,144,.32)}
+#recash .rc-banner__logo{display:grid;place-items:center;flex:none;width:100px;height:100px;border-radius:24px;background:#fff}
+#recash .rc-banner__logo .rc-mark{width:56px;height:60px;fill:none;stroke:none;--rc-m-bag:#4c1d95;--rc-m-in:#4c1d95;--rc-m-fg:#fff}
+#recash .rc-banner__txt{flex:1}
+#recash .rc-banner__txt h2{font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:700;color:#fff}
+#recash .rc-banner__txt h2 span{color:#3ddc57}
+#recash .rc-banner__txt p{margin-top:8px;color:#e6defc}
+#recash .rc-banner .rc-btns{flex:none}
+#recash .rc-banner .rc-btn{padding:16px 24px}
+#recash .rc-contact{position:relative;overflow:hidden;background:radial-gradient(700px 320px at 12% 10%,rgba(124,58,237,.10),transparent 65%),radial-gradient(700px 320px at 92% 90%,rgba(124,58,237,.10),transparent 65%),var(--rc-lav)}
+#recash .rc-contact .rc-head{margin-bottom:38px}
+#recash .rc-contact .rc-head strong{color:var(--rc-ink)}
+#recash .rc-contact .rc-h2 span{color:var(--rc-purple)}
+#recash .rc-feats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:34px 10px;border-radius:22px;background:#fff;box-shadow:var(--rc-shadow)}
+#recash .rc-feat{padding:6px 26px;text-align:center}
+#recash .rc-feat + .rc-feat{border-left:1px solid var(--rc-line)}
+#recash .rc-feat .rc-circle{width:92px;height:92px;margin:0 auto 20px}
+#recash .rc-feat .rc-ico{width:42px;height:42px}
+#recash .rc-feat h3{font-size:1.1rem;font-weight:700}
+#recash .rc-feat p{margin-top:8px;font-size:.93rem;color:var(--rc-muted)}
+#recash .rc-cta{display:flex;justify-content:center;margin-top:34px}
+#recash .rc-addr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+#recash .rc-addr__item{display:flex;gap:18px;padding:28px;border-radius:18px;background:#fff;box-shadow:var(--rc-shadow)}
+#recash .rc-addr__item .rc-circle{width:56px;height:56px}
+#recash .rc-addr__item .rc-ico{width:26px;height:26px}
+#recash .rc-addr__item h3{font-size:1.1rem;font-weight:700}
+#recash .rc-addr__item p{margin-top:6px;color:var(--rc-muted);font-size:.96rem}
+#recash .rc-addr__item a{color:var(--rc-purple);font-weight:600}
+#recash .rc-addr__item a:hover,#recash .rc-addr__item a:focus{color:var(--rc-purple-d);text-decoration:underline}
+#recash .rc-footer{color:#fff;background:#160a3e}
+#recash .rc-footer__top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:40px;padding:44px 0 40px}
+#recash .rc-footer .rc-logo .rc-mark{width:42px;height:46px}
+#recash .rc-footer__txt{padding:0 40px;border-left:1px solid rgba(255,255,255,.14);border-right:1px solid rgba(255,255,255,.14);max-width:520px;font-size:.98rem;color:#e0daf5}
+#recash .rc-footer__txt em{display:block;margin-top:8px;font-style:normal;font-weight:600;color:#3ddc57}
+#recash .rc-social{display:flex;gap:14px}
+#recash .rc-social a{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.10);color:#fff;transition:background .2s,transform .2s}
+#recash .rc-social a:hover,#recash .rc-social a:focus{background:var(--rc-green-d);color:#fff;transform:translateY(-2px)}
+#recash .rc-social .rc-ico{width:24px;height:24px}
+#recash .rc-footer__legal{padding:0 0 30px;font-size:.84rem;line-height:1.6;color:#b9b0dc;max-width:980px}
+#recash .rc-footer__bar{background:#22145b;border-top:1px solid rgba(255,255,255,.08)}
+#recash .rc-footer__bar .rc-wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 24px;padding-top:20px;padding-bottom:20px;font-size:.92rem;color:#d7cff2}
+#recash .rc-footer__bar .rc-ico{width:22px;height:22px;color:#3ddc57}
+#recash .rc-footer__bar span.rc-copy{display:inline-flex;align-items:center;gap:12px}
+#recash .rc-footer__bar span.rc-sep{width:1px;height:18px;background:rgba(255,255,255,.25)}
+#recash .rc-footer__bar strong{font-weight:500;color:#3ddc57}
+@media (max-width:1240px){
+#recash .rc-nav{gap:32px;font-size:1.05rem}
+#recash .rc-hero__grid{gap:40px}
+#recash .rc-banner{padding:34px 40px;gap:26px}
+#recash .rc-banner .rc-btns{flex-direction:column}
+}
+@media (max-width:1100px){
+#recash .rc-cards,#recash .rc-pillars{grid-template-columns:repeat(2,minmax(0,1fr))}
+#recash .rc-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 0}
+#recash .rc-strip__item:nth-child(3){border-left:0}
+#recash .rc-diffs{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:980px){
+#recash .rc-nav{display:none}
+#recash .rc-header__in{grid-template-columns:1fr auto;min-height:72px;gap:16px}
+#recash .rc-logo .rc-mark{width:34px;height:38px}
+#recash .rc-logo__txt b{font-size:1.85rem}
+#recash .rc-burger{display:grid}
+#recash .rc-toggle:checked ~ .rc-menu{display:flex;flex-direction:column;padding:8px 30px 22px;background:#1b0d4d;border-top:1px solid rgba(255,255,255,.08)}
+#recash .rc-menu a{padding:14px 0;font-size:1.12rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,.08)}
+#recash .rc-sec{padding:64px 0;scroll-margin-top:72px}
+#recash .rc-hero{padding:48px 0 56px;scroll-margin-top:72px}
+#recash .rc-hero__grid{grid-template-columns:minmax(0,1fr)}
+#recash .rc-about{grid-template-columns:minmax(0,1fr);gap:36px}
+#recash .rc-who{grid-template-columns:minmax(0,1fr);max-width:560px;margin:0 auto}
+#recash .rc-steps{grid-template-columns:minmax(0,1fr);gap:26px;max-width:560px;margin:0 auto}
+#recash .rc-steps::before{display:none}
+#recash .rc-step{display:grid;grid-template-columns:70px minmax(0,1fr);column-gap:20px;align-items:start;text-align:left;padding:0}
+#recash .rc-step__n{position:absolute;left:-8px;top:-8px;z-index:1;width:28px;height:28px;margin:0;font-size:.82rem}
+#recash .rc-step__ic{grid-row:1 / span 2;margin:0}
+#recash .rc-step p{margin-top:4px}
+#recash .rc-etapas{grid-template-columns:minmax(0,1fr)}
+#recash .rc-feats{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 0}
+#recash .rc-feat:nth-child(3){border-left:0}
+#recash .rc-addr{grid-template-columns:minmax(0,1fr)}
+#recash .rc-banner{flex-direction:column;align-items:flex-start;padding:32px 28px}
+#recash .rc-banner .rc-btns{flex-direction:row}
+#recash .rc-footer__top{grid-template-columns:minmax(0,1fr);gap:26px;padding:36px 0 30px}
+#recash .rc-footer__txt{padding:22px 0;border-left:0;border-right:0;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+}
+@media (max-width:640px){
+#recash .rc-wrap{padding:0 18px}
+#recash .rc-sec{padding:52px 0}
+#recash .rc-head{margin-bottom:34px}
+#recash .rc-hero h1::after{margin-top:18px}
+#recash .rc-btns .rc-btn{width:100%}
+#recash .rc-checks{gap:12px 22px}
+#recash .rc-stats{padding:30px 20px 22px}
+#recash .rc-stats__grid{gap:8px}
+#recash .rc-stat .rc-circle{width:58px;height:58px}
+#recash .rc-stat .rc-ico{width:26px;height:26px}
+#recash .rc-stat strong{font-size:1.4rem}
+#recash .rc-stat > span:not(.rc-circle){font-size:.8rem}
+#recash .rc-cards,#recash .rc-pillars,#recash .rc-diffs{grid-template-columns:minmax(0,1fr)}
+#recash .rc-strip{grid-template-columns:minmax(0,1fr)}
+#recash .rc-strip__item + .rc-strip__item{border-left:0}
+#recash .rc-panel{padding:26px 22px}
+#recash .rc-etapa{padding:22px 18px;gap:14px}
+#recash .rc-faq summary{gap:14px;padding:12px 18px 12px 14px;min-height:74px;font-size:1rem}
+#recash .rc-faq__ic{width:44px;height:44px}
+#recash .rc-faq__a{padding:0 20px 22px}
+#recash .rc-feats{grid-template-columns:minmax(0,1fr);padding:26px 10px}
+#recash .rc-feat + .rc-feat{border-left:0;border-top:1px solid var(--rc-line);padding-top:26px}
+#recash .rc-feat:nth-child(3){border-left:0}
+#recash .rc-btn--xl{padding:20px 26px;font-size:1.1rem}
+#recash .rc-btn--xl .rc-ico:first-child{width:30px;height:30px}
+#recash .rc-banner .rc-btns{flex-direction:column;width:100%}
+#recash .rc-footer__bar .rc-wrap{flex-direction:column;text-align:center}
+#recash .rc-footer__bar span.rc-sep{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+#recash *,#recash *::before,#recash *::after{transition:none !important;animation:none !important}
+}
+</style>
+<div id="recash" class="rc-root">
+<svg class="rc-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<defs>
+<symbol id="rc-i-mark" viewBox="0 0 56 60">
+<path d="M28 15C26 7 20 3 12 4c0 8 6 12 16 11z" style="fill:#2fd04b"/>
+<path d="M28 15c2-8 8-12 16-11 0 8-6 12-16 11z" style="fill:#5be36f"/>
+<circle cx="28" cy="38" r="21" style="fill:var(--rc-m-bag,#2fd04b)"/>
+<circle cx="28" cy="38" r="16" style="fill:var(--rc-m-in,#1a0d4d)"/>
+<text x="28" y="47" text-anchor="middle" font-family="Outfit,Arial,sans-serif" font-weight="700" font-size="26" style="fill:var(--rc-m-fg,#fff)">$</text>
+</symbol>
+<symbol id="rc-i-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+<symbol id="rc-i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+<symbol id="rc-i-shield-check" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="rc-i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z"/></symbol>
+<symbol id="rc-i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></symbol>
+<symbol id="rc-i-chevron" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></symbol>
+<symbol id="rc-i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></symbol>
+<symbol id="rc-i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="rc-i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+<symbol id="rc-i-file-up" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 18v-6M9 14.5l3-3 3 3"/></symbol>
+<symbol id="rc-i-bank" viewBox="0 0 24 24"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></symbol>
+<symbol id="rc-i-money" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></symbol>
+<symbol id="rc-i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></symbol>
+<symbol id="rc-i-clipboard" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></symbol>
+<symbol id="rc-i-headset" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></symbol>
+<symbol id="rc-i-hand-dollar" viewBox="0 0 24 24"><circle cx="12" cy="7" r="6"/><path d="M12 3.5v7M14.2 5.4h-3a1.4 1.4 0 0 0 0 2.8h1.6a1.4 1.4 0 0 1 0 2.8H9.6"/><path d="M2 17l4-1.5 5 1.2h3.2a1.4 1.4 0 0 1 0 2.8H10.5M14 17.5l5.6-2a1.5 1.5 0 0 1 1.6 2.4L15.5 22H8l-6-2"/></symbol>
+<symbol id="rc-i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+<symbol id="rc-i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+<symbol id="rc-i-card" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22M5 15h4"/></symbol>
+<symbol id="rc-i-refund" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M15.5 9H10a2 2 0 0 0 0 4h4a2 2 0 0 1 0 4H8.5"/></symbol>
+<symbol id="rc-i-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></symbol>
+<symbol id="rc-i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+<symbol id="rc-i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16M2 13h20"/></symbol>
+<symbol id="rc-i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+<symbol id="rc-i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="rc-i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+<symbol id="rc-i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></symbol>
+</defs>
+</svg>
+<header class="rc-header">
+<input type="checkbox" id="rc-nav-toggle" class="rc-toggle" aria-label="Abrir ou fechar o menu">
+<div class="rc-wrap rc-header__in">
+<nav class="rc-nav rc-nav--l" aria-label="Menu principal">
+<a class="is-active" href="#rc-home">Home</a>
+<a href="#rc-como-funciona">Como funciona</a>
+<a href="#rc-para-quem-e">Para quem é</a>
+</nav>
+<a class="rc-logo" href="#rc-home" aria-label="ReCash - Inteligência Financeira">
+<svg class="rc-mark" aria-hidden="true"><use href="#rc-i-mark"/></svg>
+<span class="rc-logo__txt"><b>ReCash</b><small>Inteligência financeira</small></span>
+</a>
+<nav class="rc-nav rc-nav--r" aria-label="Menu secundário">
+<a href="#rc-faq">FAQ</a>
+<a href="#rc-contato">Contato</a>
+<a href="#rc-endereco">Endereço</a>
+</nav>
+<label class="rc-burger" for="rc-nav-toggle"><span></span><span></span><span></span></label>
+</div>
+<nav class="rc-menu" aria-label="Menu mobile">
+<a href="#rc-home">Home</a>
+<a href="#rc-como-funciona">Como funciona</a>
+<a href="#rc-para-quem-e">Para quem é</a>
+<a href="#rc-faq">FAQ</a>
+<a href="#rc-contato">Contato</a>
+<a href="#rc-endereco">Endereço</a>
+</nav>
+</header>
+<section class="rc-hero" id="rc-home">
+<div class="rc-wrap rc-hero__grid">
+<div class="rc-hero__copy">
+<h1>Recuperamos valores <span>cobrados indevidamente</span> em contratos bancários.</h1>
+<div class="rc-hero__note">
+<span class="rc-boxicon"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-shield-check"/></svg></span>
+<p>Processo seguro, administrativo e sem prejudicar seu relacionamento com o banco.</p>
+</div>
+<div class="rc-btns">
+<a class="rc-btn rc-btn--wa" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20uma%20an%C3%A1lise%20dos%20meus%20contratos%20banc%C3%A1rios." target="_blank" rel="noopener"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg>Falar com a ReCash</a>
+<a class="rc-btn rc-btn--ghost" href="#rc-como-funciona"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-play"/></svg>Ver como funciona</a>
+</div>
+<ul class="rc-checks">
+<li><i class="rc-tick"></i>Análise gratuita</li>
+<li><i class="rc-tick"></i>Sem pagamento antecipado</li>
+<li><i class="rc-tick"></i>Você só paga se receber</li>
+</ul>
+</div>
+<div class="rc-stats-wrap">
+<aside class="rc-stats" aria-label="Vantagens do processo">
+<p class="rc-stats__title">Vantagens do processo</p>
+<div class="rc-stats__grid">
+<div class="rc-stat"><span class="rc-circle"><svg class="rc-ico rc-ico--fill" aria-hidden="true"><use href="#rc-i-shield"/></svg></span><strong>100%</strong><span>Administrativo</span></div>
+<div class="rc-stat"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-calendar"/></svg></span><strong>20 dias</strong><span>Prazo médio</span></div>
+<div class="rc-stat"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-target"/></svg></span><strong>40%</strong><span>Só sobre êxito</span></div>
+</div>
+<p class="rc-stats__note"><svg class="rc-ico rc-ico--fill" aria-hidden="true"><use href="#rc-i-shield-check"/></svg>Processo seguro e sem prejudicar seu relacionamento com o banco.</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="rc-sec rc-sec--lav" id="rc-solucao">
+<div class="rc-wrap">
+<div class="rc-head">
+<span class="rc-eyebrow">Recuperação de valores bancários</span>
+<h2 class="rc-h2">Recupere valores que são seus por direito</h2>
+<p>Muitos contratos de empréstimo incluem cobranças indevidas sem que o cliente perceba. A ReCash identifica essas cobranças e conduz todo o processo para buscar o ressarcimento.</p>
+</div>
+<div class="rc-cards">
+<article class="rc-card">
+<span class="rc-tile"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-file"/></svg></span>
+<h3>Análise do contrato</h3>
+<p>Analisamos seu contrato em busca de cobranças indevidas e valores que podem ser recuperados.</p>
+<a class="rc-card__go" href="#rc-quem-somos" aria-label="Saiba mais sobre a análise do contrato"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-chevron"/></svg></a>
+</article>
+<article class="rc-card">
+<span class="rc-tile"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-bank"/></svg></span>
+<h3>Pedido administrativo</h3>
+<p>Solicitamos o ressarcimento ao banco de forma administrativa, sem necessidade de ação judicial.</p>
+<a class="rc-card__go" href="#rc-como-funciona" aria-label="Saiba mais sobre o pedido administrativo"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-chevron"/></svg></a>
+</article>
+<article class="rc-card">
+<span class="rc-tile"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-shield"/></svg></span>
+<h3>Sem risco para o cliente</h3>
+<p>Você não paga nada adiantado. Só cobramos nossos honorários se houver recuperação.</p>
+<a class="rc-card__go" href="#rc-etapas" aria-label="Saiba mais sobre o pagamento dos honorários"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-chevron"/></svg></a>
+</article>
+<article class="rc-card">
+<span class="rc-tile"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-money"/></svg></span>
+<h3>Você recebe o que é seu</h3>
+<p>Com o valor recuperado, você recebe direto na sua conta e só então paga nossos honorários.</p>
+<a class="rc-card__go" href="#rc-etapas" aria-label="Saiba mais sobre o recebimento"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-chevron"/></svg></a>
+</article>
+</div>
+</div>
+</section>
+<section class="rc-sec" id="rc-quem-somos">
+<div class="rc-wrap">
+<div class="rc-about">
+<div>
+<span class="rc-eyebrow">Quem somos</span>
+<h2 class="rc-h2">Recuperação administrativa de valores cobrados indevidamente</h2>
+<div class="rc-prose">
+<p>A ReCash é uma empresa localizada em <strong>Ribeirão Preto/SP</strong>, especializada na recuperação administrativa de valores que podem ter sido cobrados indevidamente por instituições financeiras.</p>
+<p>Atendemos pessoas físicas e empresas que possuem contratos bancários, como empréstimos, financiamentos, capital de giro e outras operações de crédito. Nosso objetivo é verificar possíveis valores disponíveis e auxiliar o cliente em todas as etapas da solicitação de restituição junto ao banco.</p>
+<p>Alguns contratos bancários podem incluir cobranças de taxas, serviços ou seguros, como o seguro prestamista. Em determinadas situações, esses produtos podem ter sido incluídos como condição para a liberação do crédito, sem que o cliente tivesse liberdade para aceitar ou recusar a contratação.</p>
+</div>
+<p class="rc-callout">Quando isso acontece, pode haver indícios de <strong>venda casada</strong>, prática proibida pela legislação brasileira. Dependendo das condições do contrato e da situação atual do valor, o cliente pode ter a possibilidade de solicitar a restituição. A ReCash atua justamente para auxiliar o cliente nessa verificação e, quando possível, solicitar a devolução do valor.</p>
+</div>
+<aside class="rc-panel">
+<h3>Como o trabalho é realizado?</h3>
+<p>Todo o trabalho da ReCash é feito de forma administrativa e amigável diretamente com a instituição financeira. Isso significa que:</p>
+<ul class="rc-xlist">
+<li><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-x"/></svg>Não entramos com ação judicial;</li>
+<li><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-x"/></svg>Não processamos o banco;</li>
+<li><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-x"/></svg>Não realizamos renegociação de dívida;</li>
+<li><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-x"/></svg>Não alteramos o contrato do cliente;</li>
+<li><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-x"/></svg>Não recebemos o dinheiro em nome do cliente;</li>
+<li><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-x"/></svg>Não exigimos pagamento antecipado.</li>
+</ul>
+<p class="rc-panel__foot">A ReCash cuida da solicitação e acompanha todas as etapas necessárias junto ao banco.</p>
+</aside>
+</div>
+<h2 class="rc-h2 rc-pillars-title">Nossa atuação</h2>
+<div class="rc-pillars">
+<div class="rc-pillar"><span class="rc-pillar__n">1</span><h3>Análise</h3><p>Avaliamos os contratos e operações bancárias para identificar possíveis cobranças indevidas ou valores passíveis de restituição.</p></div>
+<div class="rc-pillar"><span class="rc-pillar__n">2</span><h3>Contestação administrativa</h3><p>Havendo valores a serem questionados, realizamos o procedimento diretamente junto à instituição financeira, sem necessidade inicial de ação judicial.</p></div>
+<div class="rc-pillar"><span class="rc-pillar__n">3</span><h3>Acompanhamento</h3><p>Acompanhamos protocolos, solicitações e eventuais exigências do banco durante todo o processo.</p></div>
+<div class="rc-pillar"><span class="rc-pillar__n">4</span><h3>Ressarcimento</h3><p>Sendo reconhecido o direito à restituição pela instituição financeira, o valor é devolvido ao cliente.</p></div>
+</div>
+</div>
+</section>
+<section class="rc-sec rc-sec--lav" id="rc-para-quem-e">
+<div class="rc-wrap">
+<div class="rc-head rc-head--bar">
+<span class="rc-eyebrow">Para quem a ReCash foi criada</span>
+<h2 class="rc-h2">Esse serviço é para você se…</h2>
+</div>
+<div class="rc-who">
+<article class="rc-who__card">
+<span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-user"/></svg></span>
+<h3>Empréstimo pessoal</h3>
+<p>Você contratou um empréstimo e o contrato pode ter taxas, serviços ou seguros, como o seguro prestamista, incluídos na operação.</p>
+</article>
+<article class="rc-who__card">
+<span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-briefcase"/></svg></span>
+<h3>Capital de giro</h3>
+<p>Sua empresa contratou capital de giro ou outra operação de crédito e pode ter pago cobranças adicionais previstas no contrato.</p>
+</article>
+<article class="rc-who__card">
+<span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-car"/></svg></span>
+<h3>Financiamento de veículos</h3>
+<p>Você financiou um veículo e o contrato pode incluir seguros ou serviços exigidos como condição para a liberação do crédito.</p>
+</article>
+</div>
+<p class="rc-who__more">Atendemos pessoas físicas e empresas com contratos bancários, incluindo empréstimos, financiamentos e outras operações de crédito.</p>
+</div>
+</section>
+<section class="rc-sec" id="rc-como-funciona">
+<div class="rc-wrap">
+<div class="rc-head rc-head--bar">
+<span class="rc-eyebrow">Passo a passo</span>
+<h2 class="rc-h2">Como funciona o processo</h2>
+</div>
+<ol class="rc-steps">
+<li class="rc-step"><span class="rc-step__n">1</span><span class="rc-step__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-file-up"/></svg></span><h3>Envie o contrato</h3><p>Você envia seu contrato de empréstimo, financiamento ou capital de giro para análise.</p></li>
+<li class="rc-step"><span class="rc-step__n">2</span><span class="rc-step__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-search"/></svg></span><h3>Fazemos a análise</h3><p>Analisamos seu contrato em busca de cobranças indevidas e valores que podem ser recuperados.</p></li>
+<li class="rc-step"><span class="rc-step__n">3</span><span class="rc-step__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-clipboard"/></svg></span><h3>Apresentamos o resultado</h3><p>Se houver valores a recuperar, apresentamos a estimativa e você decide se deseja seguir.</p></li>
+<li class="rc-step"><span class="rc-step__n">4</span><span class="rc-step__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-headset"/></svg></span><h3>Cuidamos de tudo</h3><p>Cuidamos de todo o processo administrativo junto ao banco, acompanhamos de perto.</p></li>
+<li class="rc-step"><span class="rc-step__n">5</span><span class="rc-step__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-hand-dollar"/></svg></span><h3>Você recebe e só então paga</h3><p>Com o valor recuperado, você recebe direto na sua conta e só então paga nossos honorários.</p></li>
+</ol>
+<div class="rc-strip">
+<div class="rc-strip__item"><span class="rc-circle"><svg class="rc-ico rc-ico--fill" aria-hidden="true"><use href="#rc-i-shield"/></svg></span><b>Sem pagamento antecipado</b></div>
+<div class="rc-strip__item"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-lock"/></svg></span><b>100% seguro e administrativo</b></div>
+<div class="rc-strip__item"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-clock"/></svg></span><b>Prazo médio de 20 dias úteis</b></div>
+<div class="rc-strip__item"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-shield-check"/></svg></span><b>Só paga se houver recuperação</b></div>
+</div>
+<div class="rc-sub" id="rc-etapas">
+<span class="rc-eyebrow">Etapas do atendimento</span>
+<h2 class="rc-h2">Cada etapa, com total transparência</h2>
+</div>
+<div class="rc-etapas">
+<article class="rc-etapa"><span class="rc-etapa__n">1</span><div><h4>Identificação da oportunidade</h4><p>Verificamos se existem indícios de cobranças que possam gerar uma possível restituição ao cliente. Neste momento, o valor apresentado é uma estimativa. A confirmação depende da análise e da resposta da instituição financeira.</p></div></article>
+<article class="rc-etapa"><span class="rc-etapa__n">2</span><div><h4>Autorização do cliente</h4><p>Para que a ReCash possa realizar a solicitação, o cliente precisa assinar um termo de prestação de serviços. O documento é enviado pelo WhatsApp e pode ser lido e assinado pelo próprio celular, de forma simples e digital. A ReCash não realiza nenhuma solicitação em nome do cliente sem sua autorização.</p></div></article>
+<article class="rc-etapa"><span class="rc-etapa__n">3</span><div><h4>Indicação da conta bancária</h4><p>O cliente informa uma conta bancária de sua própria titularidade para receber a possível restituição. Se o contrato estiver vinculado a um CPF, a conta também deverá pertencer ao mesmo CPF. Se estiver vinculado a um CNPJ, o pagamento deverá ser realizado em uma conta da própria empresa, respeitando as regras do banco. O banco não realiza o pagamento em conta de terceiros.</p></div></article>
+<article class="rc-etapa"><span class="rc-etapa__n">4</span><div><h4>Solicitação administrativa</h4><p>Após o recebimento da autorização e das informações necessárias, a ReCash apresenta a solicitação diretamente à instituição financeira. Todo o acompanhamento é realizado pela nossa equipe, sem a necessidade de o cliente enfrentar processos burocráticos sozinho.</p></div></article>
+<article class="rc-etapa"><span class="rc-etapa__n">5</span><div><h4>Análise do banco</h4><p>A instituição financeira verifica se o valor continua ativo e disponível para restituição. O prazo estimado é de aproximadamente 10 dias úteis, mas pode variar de acordo com os procedimentos e a análise de cada banco.</p></div></article>
+<article class="rc-etapa"><span class="rc-etapa__n">6</span><div><h4>Pagamento direto ao cliente</h4><p>Se a restituição for aprovada, o pagamento será realizado pelo próprio banco diretamente na conta indicada pelo cliente. A ReCash não recebe, não movimenta e não tem acesso ao valor da restituição.</p></div></article>
+<article class="rc-etapa"><span class="rc-etapa__n">7</span><div><h4>Pagamento dos honorários</h4><p>O cliente somente paga pelos serviços da ReCash depois que o valor for efetivamente recebido em sua conta. <strong>Não existe cobrança antecipada.</strong></p></div></article>
+<article class="rc-etapa rc-etapa--hl"><h4>E se não houver restituição?</h4><p>O valor poderá não estar mais disponível caso o banco já tenha realizado a devolução anteriormente ou utilizado a quantia para amortizar ou abater o contrato. Nesse caso, o atendimento é encerrado e o cliente não tem nenhum custo com a ReCash.</p><p class="rc-rule">Se o cliente não receber, <em>não paga nada.</em></p></article>
+</div>
+<div class="rc-sub">
+<span class="rc-eyebrow">Por que a ReCash</span>
+<h2 class="rc-h2">Principais diferenciais</h2>
+</div>
+<ul class="rc-diffs">
+<li class="rc-diff"><i class="rc-tick"></i>Atendimento especializado e personalizado</li>
+<li class="rc-diff"><i class="rc-tick"></i>Atuação totalmente administrativa</li>
+<li class="rc-diff"><i class="rc-tick"></i>Solicitação realizada diretamente com o banco</li>
+<li class="rc-diff"><i class="rc-tick"></i>Processo simples, digital e transparente</li>
+<li class="rc-diff"><i class="rc-tick"></i>Nenhum pagamento antecipado</li>
+<li class="rc-diff"><i class="rc-tick"></i>Pagamento da restituição diretamente ao cliente</li>
+<li class="rc-diff"><i class="rc-tick"></i>Honorários cobrados somente após o recebimento</li>
+<li class="rc-diff"><i class="rc-tick"></i>Nenhum custo caso não haja restituição</li>
+<li class="rc-diff"><i class="rc-tick"></i>Acompanhamento da solicitação em todas as etapas</li>
+</ul>
+<p class="rc-legal"><strong>Importante:</strong> a ReCash não promete nem garante a restituição. A empresa identifica uma possível oportunidade, realiza a solicitação administrativa e acompanha o atendimento, mas a confirmação do valor depende da análise da instituição financeira.</p>
+</div>
+</section>
+<section class="rc-sec rc-sec--lav" id="rc-faq">
+<div class="rc-wrap">
+<div class="rc-head rc-head--bar">
+<span class="rc-eyebrow">Perguntas frequentes</span>
+<h2 class="rc-h2">Ainda com dúvidas?</h2>
+<p>Reunimos as principais perguntas para esclarecer tudo sobre o nosso processo.</p>
+</div>
+<div class="rc-faq">
+<details>
+<summary><span class="rc-faq__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-shield"/></svg><i></i></span><span class="rc-faq__q">O processo é seguro?</span><span class="rc-plus"></span></summary>
+<p class="rc-faq__a">Sim. Todo o trabalho é feito de forma administrativa e amigável, diretamente com a instituição financeira, sem ação judicial. A ReCash não realiza nenhuma solicitação sem a sua autorização, dada por um termo de prestação de serviços assinado digitalmente pelo celular. Além disso, a ReCash não recebe, não movimenta e não tem acesso ao valor da restituição: se for aprovada, o próprio banco paga direto na sua conta.</p>
+</details>
+<details>
+<summary><span class="rc-faq__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-card"/></svg><i></i></span><span class="rc-faq__q">Preciso pagar algo antecipadamente?</span><span class="rc-plus"></span></summary>
+<p class="rc-faq__a">Não. A ReCash não exige nenhum pagamento antecipado. Os honorários só são cobrados depois que o valor da restituição for efetivamente recebido na sua conta. Se não houver restituição, você não paga nada.</p>
+</details>
+<details>
+<summary><span class="rc-faq__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-bank"/></svg><i></i></span><span class="rc-faq__q">Isso prejudica meu relacionamento com o banco?</span><span class="rc-plus"></span></summary>
+<p class="rc-faq__a">A solicitação é feita de forma administrativa e amigável. Não processamos o banco, não realizamos renegociação de dívida e não alteramos o seu contrato: a ReCash apenas apresenta o pedido de restituição e acompanha a resposta da instituição financeira.</p>
+</details>
+<details>
+<summary><span class="rc-faq__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-clock"/></svg><i></i></span><span class="rc-faq__q">Em quanto tempo o cliente recebe?</span><span class="rc-plus"></span></summary>
+<p class="rc-faq__a">Após o recebimento da autorização e das informações necessárias, o prazo estimado de análise do banco é de aproximadamente 10 dias úteis, podendo variar conforme os procedimentos de cada instituição. O prazo médio do processo é de cerca de 20 dias úteis. Se a restituição for aprovada, o pagamento é feito pelo banco diretamente na conta indicada por você.</p>
+</details>
+<details>
+<summary><span class="rc-faq__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-file"/></svg><i></i></span><span class="rc-faq__q">Que tipo de cobrança pode ser recuperada?</span><span class="rc-plus"></span></summary>
+<p class="rc-faq__a">Taxas, serviços ou seguros incluídos no contrato, como o seguro prestamista, principalmente quando foram impostos como condição para a liberação do crédito, sem que o cliente pudesse aceitar ou recusar. Nesses casos pode haver indícios de venda casada, prática proibida pela legislação brasileira. A possibilidade de restituição depende das condições do contrato e da situação atual do valor.</p>
+</details>
+<details>
+<summary><span class="rc-faq__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-clipboard"/></svg><i></i></span><span class="rc-faq__q">A ReCash garante a restituição?</span><span class="rc-plus"></span></summary>
+<p class="rc-faq__a">Não. A ReCash identifica uma possível oportunidade, realiza a solicitação administrativa e acompanha o atendimento, mas a confirmação do valor depende da análise da instituição financeira. O valor apresentado no início é uma estimativa.</p>
+</details>
+<details>
+<summary><span class="rc-faq__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-refund"/></svg><i></i></span><span class="rc-faq__q">E se não houver restituição?</span><span class="rc-plus"></span></summary>
+<p class="rc-faq__a">O valor pode não estar mais disponível, por exemplo, se o banco já realizou a devolução anteriormente ou usou a quantia para amortizar ou abater o contrato. Nesse caso, o atendimento é encerrado e você não tem nenhum custo com a ReCash. A regra é simples: se o cliente não receber, não paga nada.</p>
+</details>
+</div>
+<div class="rc-banner">
+<span class="rc-banner__logo"><svg class="rc-mark" aria-hidden="true"><use href="#rc-i-mark"/></svg></span>
+<div class="rc-banner__txt">
+<h2>Fale com a <span>ReCash</span></h2>
+<p>Estamos prontos para analisar seu contrato e ajudar você a recuperar o que é seu por direito.</p>
+</div>
+<div class="rc-btns">
+<a class="rc-btn rc-btn--wa" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20da%20ReCash." target="_blank" rel="noopener"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg>Falar com especialista</a>
+<a class="rc-btn rc-btn--ghost" href="#rc-endereco"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-pin"/></svg>Ver endereço</a>
+</div>
+</div>
+</div>
+</section>
+<section class="rc-sec rc-contact" id="rc-contato">
+<div class="rc-wrap">
+<div class="rc-head rc-head--bar">
+<span class="rc-eyebrow">Fale com a ReCash</span>
+<h2 class="rc-h2">Descubra se você tem valores <span>para receber.</span></h2>
+<p>Você pode ter valores a recuperar e ainda não saber. Solicite uma análise dos seus contratos bancários e descubra se existem cobranças passíveis de ressarcimento. Nossa equipe está pronta para analisar seu caso de forma <strong>segura, rápida e sem custo inicial.</strong></p>
+</div>
+<div class="rc-feats">
+<div class="rc-feat"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-shield-check"/></svg></span><h3>100% seguro</h3><p>Seus dados e informações estão protegidos conosco.</p></div>
+<div class="rc-feat"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-clock"/></svg></span><h3>Análise rápida e gratuita</h3><p>Analisamos seu caso com agilidade e eficiência.</p></div>
+<div class="rc-feat"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-refund"/></svg></span><h3>Sem custo inicial</h3><p>Você só paga se houver recuperação.</p></div>
+<div class="rc-feat"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-headset"/></svg></span><h3>Atendimento humano</h3><p>Fale com especialistas sempre que precisar.</p></div>
+</div>
+<div class="rc-cta">
+<a class="rc-btn rc-btn--wa rc-btn--xl" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20uma%20an%C3%A1lise%20dos%20meus%20contratos%20banc%C3%A1rios." target="_blank" rel="noopener"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg><span>Falar com a ReCash no WhatsApp</span><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-arrow"/></svg></a>
+</div>
+</div>
+</section>
+<section class="rc-sec" id="rc-endereco">
+<div class="rc-wrap">
+<div class="rc-head rc-head--bar">
+<span class="rc-eyebrow">Onde estamos</span>
+<h2 class="rc-h2">Endereço e canais de atendimento</h2>
+</div>
+<div class="rc-addr">
+<div class="rc-addr__item"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-pin"/></svg></span><div><h3>Localização</h3><p>ReCash Inteligência Financeira<br>Ribeirão Preto / SP</p></div></div>
+<div class="rc-addr__item"><span class="rc-circle"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg></span><div><h3>WhatsApp</h3><p>Envie seu contrato e solicite a análise.<br><a href="https://wa.me/5500000000000" target="_blank" rel="noopener">Chamar no WhatsApp</a></p></div></div>
+<div class="rc-addr__item"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-instagram"/></svg></span><div><h3>Redes sociais</h3><p>Acompanhe a ReCash.<br><a href="https://www.instagram.com/SEU_INSTAGRAM" target="_blank" rel="noopener">Ver no Instagram</a></p></div></div>
+</div>
+</div>
+</section>
+<footer class="rc-footer">
+<div class="rc-wrap">
+<div class="rc-footer__top">
+<a class="rc-logo" href="#rc-home" aria-label="ReCash - voltar ao topo">
+<svg class="rc-mark" aria-hidden="true"><use href="#rc-i-mark"/></svg>
+<span class="rc-logo__txt"><b>ReCash</b><small>Inteligência financeira</small></span>
+</a>
+<p class="rc-footer__txt">Recuperamos valores cobrados indevidamente em contratos bancários de forma administrativa, segura e sem burocracia.<em>ReCash — inteligência que gera retorno.</em></p>
+<div class="rc-social">
+<a href="https://wa.me/5500000000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg></a>
+<a href="https://www.instagram.com/SEU_INSTAGRAM" target="_blank" rel="noopener" aria-label="Instagram"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-instagram"/></svg></a>
+<a href="tel:+5500000000000" aria-label="Telefone"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-phone"/></svg></a>
+</div>
+</div>
+<p class="rc-footer__legal">A ReCash não promete nem garante a restituição de valores. A confirmação do valor depende da análise da instituição financeira. Todo o trabalho é realizado de forma administrativa, sem ação judicial, e os honorários só são cobrados após o cliente receber o valor diretamente em sua conta.</p>
+</div>
+<div class="rc-footer__bar">
+<div class="rc-wrap">
+<span class="rc-copy"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-shield-check"/></svg>© 2026 ReCash Inteligência Financeira. Todos os direitos reservados.</span>
+<span class="rc-sep"></span>
+<span>Site produzido por: <strong>Estúdio Pink Design</strong></span>
+</div>
+</div>
+</footer>
+</div>
+<script>
+(function () {
+var root = document.getElementById('recash');
+if (!root) { return; }
+var toggle = document.getElementById('rc-nav-toggle');
+var links = root.querySelectorAll('.rc-nav a, .rc-menu a');
+var i;
+function closeMenu() {
+if (toggle) { toggle.checked = false; }
+}
+for (i = 0; i < links.length; i++) {
+links[i].addEventListener('click', closeMenu);
+}
+var map = {
+'rc-home': 'rc-home',
+'rc-solucao': 'rc-home',
+'rc-quem-somos': 'rc-home',
+'rc-para-quem-e': 'rc-para-quem-e',
+'rc-como-funciona': 'rc-como-funciona',
+'rc-faq': 'rc-faq',
+'rc-contato': 'rc-contato',
+'rc-endereco': 'rc-endereco'
+};
+function setActive(id) {
+var target = map[id];
+var j;
+var href;
+for (j = 0; j < links.length; j++) {
+href = links[j].getAttribute('href');
+if (href === '#' + target) {
+links[j].classList.add('is-active');
+} else {
+links[j].classList.remove('is-active');
+}
+}
+}
+if (!('IntersectionObserver' in window)) { return; }
+var observer = new IntersectionObserver(function (entries) {
+var k;
+for (k = 0; k < entries.length; k++) {
+if (entries[k].isIntersecting) { setActive(entries[k].target.id); }
+}
+}, { rootMargin: '-35% 0px -60% 0px' });
+var id;
+var el;
+for (id in map) {
+el = document.getElementById(id);
+if (el) { observer.observe(el); }
+}
+})();
+</script>
