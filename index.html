@@ -100,8 +100,9 @@ body{overflow-x:clip}
 #recash .rc-stat strong{display:block;font-size:2rem;font-weight:700;line-height:1.1;color:var(--rc-purple-d)}
 #recash .rc-stat strong.rc-stat__txt{max-width:150px;font-size:1.05rem;line-height:1.3}
 #recash .rc-stat > span:not(.rc-circle){display:block;margin-top:6px;font-size:.95rem;color:var(--rc-muted)}
-#recash .rc-stat > :last-child{margin-bottom:18px}
-#recash .rc-stat::after{content:'';display:block;width:30px;height:3px;border-radius:2px;margin:auto auto 0;background:var(--rc-green)}
+#recash .rc-stat > strong{margin-block:auto}
+#recash .rc-stat strong.rc-stat__pre em{display:block;margin-bottom:2px;font-style:normal;font-size:1rem;font-weight:600;line-height:1.2;color:var(--rc-purple)}
+#recash .rc-stat::after{content:'';display:block;width:30px;height:3px;border-radius:2px;margin:18px auto 0;background:var(--rc-green)}
 #recash .rc-stats__note{display:flex;align-items:center;gap:12px;margin-top:22px;padding-top:22px;border-top:1px solid var(--rc-line);font-size:.92rem;color:var(--rc-muted)}
 #recash .rc-stats__note .rc-ico{width:22px;height:22px;color:var(--rc-green-d)}
 #recash .rc-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
@@ -286,6 +287,7 @@ body{overflow-x:clip}
 #recash .rc-stat .rc-circle--cash{font-size:1.7rem}
 #recash .rc-stat strong{font-size:1.4rem}
 #recash .rc-stat strong.rc-stat__txt{font-size:.82rem}
+#recash .rc-stat strong.rc-stat__pre em{font-size:.78rem}
 #recash .rc-stat > span:not(.rc-circle){font-size:.8rem}
 #recash .rc-cards,#recash .rc-pillars{grid-template-columns:minmax(0,1fr)}
 #recash .rc-strip{grid-template-columns:minmax(0,1fr)}
@@ -391,7 +393,7 @@ html{scroll-behavior:auto}
 <p class="rc-stats__title">Vantagens do processo</p>
 <div class="rc-stats__grid">
 <div class="rc-stat"><span class="rc-circle"><svg class="rc-ico rc-ico--fill" aria-hidden="true"><use href="#rc-i-shield"/></svg></span><strong>Seguro</strong></div>
-<div class="rc-stat"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-calendar"/></svg></span><strong>20 dias</strong></div>
+<div class="rc-stat"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-calendar"/></svg></span><strong class="rc-stat__pre"><em>em até</em>20 dias</strong></div>
 <div class="rc-stat"><span class="rc-circle rc-circle--cash" aria-hidden="true">$</span><strong class="rc-stat__txt">Pagamento somente no êxito</strong></div>
 </div>
 <p class="rc-stats__note"><svg class="rc-ico rc-ico--fill" aria-hidden="true"><use href="#rc-i-shield-check"/></svg>Processo seguro e sem prejudicar seu relacionamento com o banco.</p>
