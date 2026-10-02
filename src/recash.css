@@ -185,12 +185,12 @@ body{overflow-x:clip}
 .rc-sub{margin:76px 0 34px;text-align:center}
 .rc-sub .rc-h2{font-size:clamp(1.5rem,2.6vw,1.95rem)}
 .rc-etapas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.rc-etapa{display:flex;gap:18px;padding:26px;border-radius:18px;background:#fff;box-shadow:var(--rc-shadow)}
+.rc-etapa{display:flex;align-items:center;gap:18px;padding:26px;border-radius:18px;background:#fff;box-shadow:var(--rc-shadow)}
 .rc-etapa__n{display:grid;place-items:center;flex:none;width:46px;height:46px;border-radius:50%;background:var(--rc-grad);color:#fff;font-size:1.15rem;font-weight:700}
 .rc-etapa h4{font-size:1.1rem;font-weight:600;color:var(--rc-ink)}
 .rc-etapa p{margin-top:8px;font-size:.94rem;color:var(--rc-muted)}
 .rc-etapa p strong{color:var(--rc-ink);font-weight:600}
-.rc-etapa--hl{flex-direction:column;justify-content:center;background:var(--rc-grad);color:#fff}
+.rc-etapa--hl{flex-direction:column;align-items:flex-start;justify-content:center;background:var(--rc-grad);color:#fff}
 .rc-etapa--hl h4{color:#fff;font-size:1.25rem}
 .rc-etapa--hl p{color:#f0e8ff}
 .rc-etapa--hl p.rc-rule{margin-top:16px;font-size:1.25rem;font-weight:600;color:#fff}
@@ -250,6 +250,7 @@ body{overflow-x:clip}
 .rc-addr__item h3{font-size:1.1rem;font-weight:700}
 .rc-addr__item p{margin-top:6px;color:var(--rc-muted);font-size:.96rem}
 .rc-addr__item a{color:var(--rc-purple);font-weight:600}
+.rc-addr__cta{margin-top:32px;text-align:center}
 .rc-addr__item a:hover,.rc-addr__item a:focus{color:var(--rc-purple-d);text-decoration:underline}
 
 /* ---------- Rodapé ---------- */
@@ -257,7 +258,7 @@ body{overflow-x:clip}
 .rc-footer__top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:40px;padding:44px 0 40px}
 .rc-footer .rc-logo__img{width:180px;height:64px}
 .rc-footer__txt{padding:0 40px;border-left:1px solid rgba(255,255,255,.14);border-right:1px solid rgba(255,255,255,.14);max-width:520px;font-size:.98rem;color:#e6e1ef}
-.rc-footer__txt em{display:block;margin-top:8px;font-style:normal;font-weight:600;color:var(--rc-green)}
+.rc-footer__txt em{display:block;margin-top:14px;font-style:normal;font-weight:700;font-size:1.35rem;line-height:1.3;color:var(--rc-green)}
 .rc-social{display:flex;gap:14px}
 .rc-social a{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.10);color:#fff;transition:background .2s,transform .2s}
 .rc-social a:hover,.rc-social a:focus{background:var(--rc-green-d);color:#fff;transform:translateY(-2px)}

@@ -140,12 +140,12 @@ body{overflow-x:clip}
 #recash .rc-sub{margin:76px 0 34px;text-align:center}
 #recash .rc-sub .rc-h2{font-size:clamp(1.5rem,2.6vw,1.95rem)}
 #recash .rc-etapas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-#recash .rc-etapa{display:flex;gap:18px;padding:26px;border-radius:18px;background:#fff;box-shadow:var(--rc-shadow)}
+#recash .rc-etapa{display:flex;align-items:center;gap:18px;padding:26px;border-radius:18px;background:#fff;box-shadow:var(--rc-shadow)}
 #recash .rc-etapa__n{display:grid;place-items:center;flex:none;width:46px;height:46px;border-radius:50%;background:var(--rc-grad);color:#fff;font-size:1.15rem;font-weight:700}
 #recash .rc-etapa h4{font-size:1.1rem;font-weight:600;color:var(--rc-ink)}
 #recash .rc-etapa p{margin-top:8px;font-size:.94rem;color:var(--rc-muted)}
 #recash .rc-etapa p strong{color:var(--rc-ink);font-weight:600}
-#recash .rc-etapa--hl{flex-direction:column;justify-content:center;background:var(--rc-grad);color:#fff}
+#recash .rc-etapa--hl{flex-direction:column;align-items:flex-start;justify-content:center;background:var(--rc-grad);color:#fff}
 #recash .rc-etapa--hl h4{color:#fff;font-size:1.25rem}
 #recash .rc-etapa--hl p{color:#f0e8ff}
 #recash .rc-etapa--hl p.rc-rule{margin-top:16px;font-size:1.25rem;font-weight:600;color:#fff}
@@ -197,12 +197,13 @@ body{overflow-x:clip}
 #recash .rc-addr__item h3{font-size:1.1rem;font-weight:700}
 #recash .rc-addr__item p{margin-top:6px;color:var(--rc-muted);font-size:.96rem}
 #recash .rc-addr__item a{color:var(--rc-purple);font-weight:600}
+#recash .rc-addr__cta{margin-top:32px;text-align:center}
 #recash .rc-addr__item a:hover,#recash .rc-addr__item a:focus{color:var(--rc-purple-d);text-decoration:underline}
 #recash .rc-footer{color:#fff;background:#1a1229}
 #recash .rc-footer__top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:40px;padding:44px 0 40px}
 #recash .rc-footer .rc-logo__img{width:180px;height:64px}
 #recash .rc-footer__txt{padding:0 40px;border-left:1px solid rgba(255,255,255,.14);border-right:1px solid rgba(255,255,255,.14);max-width:520px;font-size:.98rem;color:#e6e1ef}
-#recash .rc-footer__txt em{display:block;margin-top:8px;font-style:normal;font-weight:600;color:var(--rc-green)}
+#recash .rc-footer__txt em{display:block;margin-top:14px;font-style:normal;font-weight:700;font-size:1.35rem;line-height:1.3;color:var(--rc-green)}
 #recash .rc-social{display:flex;gap:14px}
 #recash .rc-social a{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.10);color:#fff;transition:background .2s,transform .2s}
 #recash .rc-social a:hover,#recash .rc-social a:focus{background:var(--rc-green-d);color:#fff;transform:translateY(-2px)}
@@ -322,6 +323,7 @@ html{scroll-behavior:auto}
 <symbol id="rc-i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
 <symbol id="rc-i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16M2 13h20"/></symbol>
 <symbol id="rc-i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+<symbol id="rc-i-star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.9 6.9-1z"/></symbol>
 <symbol id="rc-i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
 <symbol id="rc-i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
 <symbol id="rc-i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></symbol>
@@ -361,7 +363,7 @@ html{scroll-behavior:auto}
 <p>Processo seguro, administrativo e sem prejudicar seu relacionamento com o banco.</p>
 </div>
 <div class="rc-btns">
-<a class="rc-btn rc-btn--wa" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20uma%20an%C3%A1lise%20dos%20meus%20contratos%20banc%C3%A1rios." target="_blank" rel="noopener"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg>Falar com a ReCash</a>
+<a class="rc-btn rc-btn--wa" href="https://wa.me/5516996282620?text=Ol%C3%A1!%20Gostaria%20de%20uma%20an%C3%A1lise%20dos%20meus%20contratos%20banc%C3%A1rios." target="_blank" rel="noopener"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg>Falar com a ReCash</a>
 <a class="rc-btn rc-btn--ghost" href="#rc-como-funciona"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-play"/></svg>Ver como funciona</a>
 </div>
 <ul class="rc-checks">
@@ -375,10 +377,10 @@ html{scroll-behavior:auto}
 <p class="rc-stats__title">Vantagens do processo</p>
 <div class="rc-stats__grid">
 <div class="rc-stat"><span class="rc-circle"><svg class="rc-ico rc-ico--fill" aria-hidden="true"><use href="#rc-i-shield"/></svg></span><strong>Seguro</strong></div>
-<div class="rc-stat"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-calendar"/></svg></span><strong class="rc-stat__pre"><em>em até</em>20 dias</strong></div>
+<div class="rc-stat"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-calendar"/></svg></span><strong class="rc-stat__pre"><em>prazo médio</em>20 dias</strong></div>
 <div class="rc-stat"><span class="rc-circle rc-circle--cash" aria-hidden="true">$</span><strong class="rc-stat__txt">Pagamento somente no êxito</strong></div>
 </div>
-<p class="rc-stats__note"><svg class="rc-ico rc-ico--fill" aria-hidden="true"><use href="#rc-i-shield-check"/></svg>Processo seguro e sem prejudicar seu relacionamento com o banco.</p>
+<p class="rc-stats__note"><svg class="rc-ico rc-ico--fill" aria-hidden="true"><use href="#rc-i-shield-check"/></svg>Processo 100% administrativo e sem prejudicar seu relacionamento com o banco.</p>
 </aside>
 </div>
 </div>
@@ -426,10 +428,10 @@ html{scroll-behavior:auto}
 <h2 class="rc-h2">Recuperação administrativa de valores cobrados indevidamente</h2>
 <div class="rc-prose">
 <p>A ReCash é uma empresa localizada em <strong>Ribeirão Preto/SP</strong>, especializada na recuperação administrativa de valores que podem ter sido cobrados indevidamente por instituições financeiras.</p>
-<p>Atendemos pessoas físicas e empresas que possuem contratos bancários, como empréstimos, financiamentos, capital de giro e outras operações de crédito. Nosso objetivo é verificar possíveis valores disponíveis e auxiliar o cliente em todas as etapas da solicitação de restituição junto ao banco.</p>
-<p>Alguns contratos bancários podem incluir cobranças de taxas, serviços ou seguros, como o seguro prestamista. Em determinadas situações, esses produtos podem ter sido incluídos como condição para a liberação do crédito, sem que o cliente tivesse liberdade para aceitar ou recusar a contratação.</p>
+<p>Atendemos pessoas físicas e empresas com contratos bancários ativos, como empréstimos, financiamentos de veículos e capital de giro. Nosso objetivo é verificar possíveis valores disponíveis e auxiliar o cliente em todas as etapas da solicitação de restituição junto ao banco.</p>
+<p>Alguns contratos bancários incluem taxas, serviços ou seguros, exigidos para liberar o crédito, sem dar ao cliente a opção de recusar ou, caso queira contratar o seguro, escolher a seguradora de sua preferência.</p>
 </div>
-<p class="rc-callout">Quando isso acontece, pode haver indícios de <strong>venda casada</strong>, prática proibida pela legislação brasileira. Dependendo das condições do contrato e da situação atual do valor, o cliente pode ter a possibilidade de solicitar a restituição. A ReCash atua justamente para auxiliar o cliente nessa verificação e, quando possível, solicitar a devolução do valor.</p>
+<p class="rc-callout">Quando o banco exige a contratação de um seguro ou outro serviço para liberar o crédito, pode haver indícios de <strong>venda casada</strong>, prática proibida pelo artigo 39, inciso I, do Código de Defesa do Consumidor (Lei nº 8.078/1990). A ReCash atua justamente para auxiliar o cliente nessa verificação e, quando possível, solicitar a devolução do valor.</p>
 </div>
 <aside class="rc-panel">
 <h3>Como o trabalho é realizado?</h3>
@@ -458,7 +460,7 @@ html{scroll-behavior:auto}
 <div class="rc-wrap">
 <div class="rc-head rc-head--bar">
 <span class="rc-eyebrow">Para quem a ReCash foi criada</span>
-<h2 class="rc-h2">Esse serviço é para você se…</h2>
+<h2 class="rc-h2">Para quem são os nossos serviços?</h2>
 </div>
 <div class="rc-who">
 <article class="rc-who__card">
@@ -477,7 +479,7 @@ html{scroll-behavior:auto}
 <p>Você financiou um veículo e o contrato pode incluir seguros ou serviços exigidos como condição para a liberação do crédito.</p>
 </article>
 </div>
-<p class="rc-who__more">Atendemos pessoas físicas e empresas com contratos bancários, incluindo empréstimos, financiamentos e outras operações de crédito.</p>
+<p class="rc-who__more">Para pessoas físicas e empresas com contratos bancários ativos, com pagamentos em dia ou em atraso.</p>
 </div>
 </section>
 <section class="rc-sec" id="rc-como-funciona">
@@ -490,7 +492,7 @@ html{scroll-behavior:auto}
 <li class="rc-step"><span class="rc-step__n">1</span><span class="rc-step__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-file-up"/></svg></span><h3>Envie o contrato</h3><p>Você envia seu contrato de empréstimo, financiamento ou capital de giro para análise.</p></li>
 <li class="rc-step"><span class="rc-step__n">2</span><span class="rc-step__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-search"/></svg></span><h3>Fazemos a análise</h3><p>Analisamos seu contrato em busca de cobranças indevidas e valores que podem ser recuperados.</p></li>
 <li class="rc-step"><span class="rc-step__n">3</span><span class="rc-step__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-clipboard"/></svg></span><h3>Apresentamos o resultado</h3><p>Se houver valores a recuperar, apresentamos a estimativa e você decide se deseja seguir.</p></li>
-<li class="rc-step"><span class="rc-step__n">4</span><span class="rc-step__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-headset"/></svg></span><h3>Cuidamos de tudo</h3><p>Cuidamos de todo o processo administrativo junto ao banco, acompanhamos de perto.</p></li>
+<li class="rc-step"><span class="rc-step__n">4</span><span class="rc-step__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-headset"/></svg></span><h3>Cuidamos de tudo</h3><p>Se houver valores ativos disponíveis para restituição, cuidamos de todo o procedimento administrativo junto ao banco e acompanhamos cada etapa de perto.</p></li>
 <li class="rc-step"><span class="rc-step__n">5</span><span class="rc-step__ic"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-hand-dollar"/></svg></span><h3>Você recebe e só então paga</h3><p>Com o valor recuperado, você recebe direto na sua conta e só então paga nossos honorários.</p></li>
 </ol>
 <div class="rc-strip">
@@ -504,14 +506,14 @@ html{scroll-behavior:auto}
 <h2 class="rc-h2">Cada etapa, com total transparência</h2>
 </div>
 <div class="rc-etapas">
-<article class="rc-etapa"><span class="rc-etapa__n">1</span><div><h4>Identificação da oportunidade</h4><p>Verificamos se existem indícios de cobranças que possam gerar uma possível restituição ao cliente. Neste momento, o valor apresentado é uma estimativa. A confirmação depende da análise e da resposta da instituição financeira.</p></div></article>
-<article class="rc-etapa"><span class="rc-etapa__n">2</span><div><h4>Autorização do cliente</h4><p>Para que a ReCash possa realizar a solicitação, o cliente precisa assinar um termo de prestação de serviços. O documento é enviado pelo WhatsApp e pode ser lido e assinado pelo próprio celular, de forma simples e digital. A ReCash não realiza nenhuma solicitação em nome do cliente sem sua autorização.</p></div></article>
-<article class="rc-etapa"><span class="rc-etapa__n">3</span><div><h4>Indicação da conta bancária</h4><p>O cliente informa uma conta bancária de sua própria titularidade para receber a possível restituição. Se o contrato estiver vinculado a um CPF, a conta também deverá pertencer ao mesmo CPF. Se estiver vinculado a um CNPJ, o pagamento deverá ser realizado em uma conta da própria empresa, respeitando as regras do banco. O banco não realiza o pagamento em conta de terceiros.</p></div></article>
-<article class="rc-etapa"><span class="rc-etapa__n">4</span><div><h4>Solicitação administrativa</h4><p>Após o recebimento da autorização e das informações necessárias, a ReCash apresenta a solicitação diretamente à instituição financeira. Todo o acompanhamento é realizado pela nossa equipe, sem a necessidade de o cliente enfrentar processos burocráticos sozinho.</p></div></article>
-<article class="rc-etapa"><span class="rc-etapa__n">5</span><div><h4>Análise do banco</h4><p>A instituição financeira verifica se o valor continua ativo e disponível para restituição. O prazo estimado é de aproximadamente 10 dias úteis, mas pode variar de acordo com os procedimentos e a análise de cada banco.</p></div></article>
-<article class="rc-etapa"><span class="rc-etapa__n">6</span><div><h4>Pagamento direto ao cliente</h4><p>Se a restituição for aprovada, o pagamento será realizado pelo próprio banco diretamente na conta indicada pelo cliente. A ReCash não recebe, não movimenta e não tem acesso ao valor da restituição.</p></div></article>
-<article class="rc-etapa"><span class="rc-etapa__n">7</span><div><h4>Pagamento dos honorários</h4><p>O cliente somente paga pelos serviços da ReCash depois que o valor for efetivamente recebido em sua conta. <strong>Não existe cobrança antecipada.</strong></p></div></article>
-<article class="rc-etapa rc-etapa--hl"><h4>E se não houver restituição?</h4><p>O valor poderá não estar mais disponível caso o banco já tenha realizado a devolução anteriormente ou utilizado a quantia para amortizar ou abater o contrato. Nesse caso, o atendimento é encerrado e o cliente não tem nenhum custo com a ReCash.</p><p class="rc-rule">Se o cliente não receber, <em>não paga nada.</em></p></article>
+<article class="rc-etapa"><span class="rc-etapa__n">1</span><div><h4>Identificação da oportunidade</h4></div></article>
+<article class="rc-etapa"><span class="rc-etapa__n">2</span><div><h4>Autorização do cliente</h4></div></article>
+<article class="rc-etapa"><span class="rc-etapa__n">3</span><div><h4>Indicação da conta bancária</h4></div></article>
+<article class="rc-etapa"><span class="rc-etapa__n">4</span><div><h4>Solicitação administrativa</h4></div></article>
+<article class="rc-etapa"><span class="rc-etapa__n">5</span><div><h4>Análise do banco</h4></div></article>
+<article class="rc-etapa"><span class="rc-etapa__n">6</span><div><h4>Pagamento direto ao cliente</h4></div></article>
+<article class="rc-etapa"><span class="rc-etapa__n">7</span><div><h4>Pagamento dos honorários somente no êxito</h4></div></article>
+<article class="rc-etapa rc-etapa--hl"><h4>E se não houver restituição?</h4><p>Se o banco já devolveu o valor ou o utilizou para abater o saldo do contrato, ele pode não estar mais disponível. Nesse caso, encerramos o atendimento sem nenhum custo para você.</p><p class="rc-rule">Se o cliente não receber, <em>não paga nada.</em></p></article>
 </div>
 <p class="rc-legal"><strong>Importante:</strong> a ReCash não promete nem garante a restituição. A empresa identifica uma possível oportunidade, realiza a solicitação administrativa e acompanha o atendimento, mas a confirmação do valor depende da análise da instituição financeira.</p>
 </div>
@@ -560,7 +562,7 @@ html{scroll-behavior:auto}
 <p>Estamos prontos para analisar seu contrato e ajudar você a recuperar o que é seu por direito.</p>
 </div>
 <div class="rc-btns">
-<a class="rc-btn rc-btn--wa" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20da%20ReCash." target="_blank" rel="noopener"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg>Falar com especialista</a>
+<a class="rc-btn rc-btn--wa" href="https://wa.me/5516996282620?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20da%20ReCash." target="_blank" rel="noopener"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg>Falar com especialista</a>
 <a class="rc-btn rc-btn--ghost" href="#rc-endereco"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-pin"/></svg>Ver endereço</a>
 </div>
 </div>
@@ -571,7 +573,7 @@ html{scroll-behavior:auto}
 <div class="rc-head rc-head--bar">
 <span class="rc-eyebrow">Fale com a ReCash</span>
 <h2 class="rc-h2">Descubra se você tem valores <span>para receber.</span></h2>
-<p>Você pode ter valores a recuperar e ainda não saber. Solicite uma análise dos seus contratos bancários e descubra se existem cobranças passíveis de ressarcimento. Nossa equipe está pronta para analisar seu caso de forma <strong>segura, rápida e sem custo inicial.</strong></p>
+<p>Solicite uma análise dos seus contratos bancários e descubra se existem cobranças indevidas e que podem voltar para você. Nossa equipe está pronta para analisar seu caso de forma <strong>segura, rápida e sem custo inicial.</strong></p>
 </div>
 <div class="rc-feats">
 <div class="rc-feat"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-shield-check"/></svg></span><h3>Seguro</h3><p>Seus dados e informações estão protegidos conosco.</p></div>
@@ -580,7 +582,7 @@ html{scroll-behavior:auto}
 <div class="rc-feat"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-headset"/></svg></span><h3>Atendimento humano</h3><p>Fale com especialistas sempre que precisar.</p></div>
 </div>
 <div class="rc-cta">
-<a class="rc-btn rc-btn--wa rc-btn--xl" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20uma%20an%C3%A1lise%20dos%20meus%20contratos%20banc%C3%A1rios." target="_blank" rel="noopener"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg><span>Falar com a ReCash no WhatsApp</span><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-arrow"/></svg></a>
+<a class="rc-btn rc-btn--wa rc-btn--xl" href="https://wa.me/5516996282620?text=Ol%C3%A1!%20Gostaria%20de%20uma%20an%C3%A1lise%20dos%20meus%20contratos%20banc%C3%A1rios." target="_blank" rel="noopener"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg><span>Falar com a ReCash no WhatsApp</span><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-arrow"/></svg></a>
 </div>
 </div>
 </section>
@@ -591,10 +593,11 @@ html{scroll-behavior:auto}
 <h2 class="rc-h2">Endereço e canais de atendimento</h2>
 </div>
 <div class="rc-addr">
-<div class="rc-addr__item"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-pin"/></svg></span><div><h3>Localização</h3><p>ReCash Inteligência Financeira<br>Ribeirão Preto / SP</p></div></div>
-<div class="rc-addr__item"><span class="rc-circle"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg></span><div><h3>WhatsApp</h3><p>Envie seu contrato e solicite a análise.<br><a href="https://wa.me/5500000000000" target="_blank" rel="noopener">Chamar no WhatsApp</a></p></div></div>
-<div class="rc-addr__item"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-instagram"/></svg></span><div><h3>Redes sociais</h3><p>Acompanhe a ReCash.<br><a href="https://www.instagram.com/SEU_INSTAGRAM" target="_blank" rel="noopener">Ver no Instagram</a></p></div></div>
+<div class="rc-addr__item"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-pin"/></svg></span><div><h3>Localização</h3><p>ReCash Inteligência Financeira<br>Av. Pres. Vargas, 1265 - 5° Andar - sala 511<br>Jardim São Luiz, Ribeirão Preto - SP, 14020-260</p></div></div>
+<div class="rc-addr__item"><span class="rc-circle"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg></span><div><h3>WhatsApp</h3><p>Envie seu contrato e solicite a análise.<br><a href="https://wa.me/5516996282620" target="_blank" rel="noopener">Chamar no WhatsApp</a><br>(16) 99628-2620</p></div></div>
+<div class="rc-addr__item"><span class="rc-circle"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-instagram"/></svg></span><div><h3>Redes sociais</h3><p>Acompanhe a ReCash.<br><a href="https://www.instagram.com/recash.if" target="_blank" rel="noopener">Ver no Instagram</a></p></div></div>
 </div>
+<div class="rc-addr__cta"><a class="rc-btn rc-btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=ReCash+Intelig%C3%AAncia+Financeira+Ribeir%C3%A3o+Preto" target="_blank" rel="noopener"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-star"/></svg>Ver avaliações no Google</a></div>
 </div>
 </section>
 <footer class="rc-footer">
@@ -603,9 +606,9 @@ html{scroll-behavior:auto}
 <a class="rc-logo" href="#rc-home" aria-label="ReCash - voltar ao topo"><span class="rc-logo__img" role="img" aria-label="ReCash Inteligência Financeira"></span></a>
 <p class="rc-footer__txt">Recuperamos valores cobrados indevidamente em contratos bancários de forma administrativa, segura e sem burocracia.<em>ReCash — inteligência que gera retorno.</em></p>
 <div class="rc-social">
-<a href="https://wa.me/5500000000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg></a>
-<a href="https://www.instagram.com/SEU_INSTAGRAM" target="_blank" rel="noopener" aria-label="Instagram"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-instagram"/></svg></a>
-<a href="tel:+5500000000000" aria-label="Telefone"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-phone"/></svg></a>
+<a href="https://wa.me/5516996282620" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="rc-ico rc-ico--solid" aria-hidden="true"><use href="#rc-i-whatsapp"/></svg></a>
+<a href="https://www.instagram.com/recash.if" target="_blank" rel="noopener" aria-label="Instagram"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-instagram"/></svg></a>
+<a href="tel:+5516996282620" aria-label="Telefone"><svg class="rc-ico" aria-hidden="true"><use href="#rc-i-phone"/></svg></a>
 </div>
 </div>
 <p class="rc-footer__legal">A ReCash não promete nem garante a restituição de valores. A confirmação do valor depende da análise da instituição financeira. Todo o trabalho é realizado de forma administrativa, sem ação judicial, e os honorários só são cobrados após o cliente receber o valor diretamente em sua conta.</p>
